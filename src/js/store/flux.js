@@ -14,6 +14,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			]
 		},
+		contacts; [
+			{
+				name: 'Logam H',
+				number: '123456789',
+				address: '123 Main Street',
+				email: 'email@gmail.com'
+
+
+			}
+		]
+
+
+
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
