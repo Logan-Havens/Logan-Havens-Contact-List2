@@ -5,10 +5,10 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
-import addContacts from "./views/addContacts"
+import addContacts from "./views/addContacts";
 import listContacts from "./views/listContacts";
 import injectContext from "./store/appContext";
-import editContacts from "./views/editContacts"
+import editContacts from "./views/editContacts";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
