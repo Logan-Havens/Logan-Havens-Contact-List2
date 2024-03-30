@@ -8,6 +8,7 @@ import { Single } from "./views/single";
 import addContacts from "./views/addContacts"
 import listContacts from "./views/listContacts";
 import injectContext from "./store/appContext";
+import editContacts from "./views/editContacts"
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -24,8 +25,9 @@ const Layout = () => {
 				<ScrollToTop>
 					
 					<Routes>
-						<route path="/list" element={<listContacts />}/>
-						<route path="/addContact" element={<addContacts />}/>
+						{/* <route path="/listContacts" element={<listContacts />}/>
+						<route path="/addContacts" element={<addContacts />}/>
+						<route path="/editContacts" element={<editContacts />}/> */}
 						<Route path="/" element={<Home />} />
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
