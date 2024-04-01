@@ -1,8 +1,11 @@
-import React, { useState } from "react"
+
+import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 
-export const editContacts = () => {
-    const { store, actions } = useContext(Context);
+const editContacts = () => {
 
-    return <div>List Contacts</div>
+   return <div>Add Contacts</div>
 }
+
+export default editContacts;
+

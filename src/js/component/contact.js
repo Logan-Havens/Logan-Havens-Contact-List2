@@ -1,11 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export const Contact = () => {
     const { store, actions } = useContext(Context);
 	return (
-		<>contact component
+		<>
+			<div>
+				contact component
+			</div>
         </>
 	);
 };
