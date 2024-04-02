@@ -1,30 +1,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			contacts: []
 		},
-		contacts: [
-			{
-				"full_name": "Theresa Barkasy",
-				"email": "theresab@email.com",
-				"agenda_slug": "theresearch",
-				"address":"1234 Main Street, City, STATE 12345",
-				"phone":"(123) 456-789"
-
-
-			}
-		],
 
 
 
@@ -33,32 +11,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
-			},
+			
+		
 			fetchAllContacts: () => {
-				fetch("https://playground.4geeks.com/apis/fake/contact/logan")
+				fetch("https://playground.4geeks.com/contact/agendas/logan/contacts")
 				.then(Response => Response.json())
 				.then(data => {
 
 				console.log(data);
-				setStore({contacts:data})
+				setStore({contacts:data.contacts})
 			})
 			},
 			fetchDeleteContacts: (id) => {
@@ -69,7 +30,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"Content-Type":"application/json"
 					}
 				}
-				fetch("https://playground.4geeks.com/apis/fake/contact/"+id,options)
+				fetch("https://playground.4geeks.com/contact/agendas/logan/contacts"+id,options)
 				.then(res => {
 					if (!res.ok)throw Error(res.statusText)
 					return res
@@ -90,7 +51,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"Content-Type":"application/json"
 					}
 				}
-				fetch("https://playground.4geeks.com/apis/fake/contact/",options)
+				fetch("https://playground.4geeks.com/contact/agendas/logan/contacts",options)
 				.then(res => {
 					if (!res.ok)throw Error(res.statusText)
 					return res
@@ -103,10 +64,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().fetchCreateContact(aNewContact);
 				setStore({contacts:revisedStore})
 			},
-			saveContact:(full_name,address,email,phone) => {
+			saveContact:(fullName,address,email,phone) => {
 
 				let newContact = {
-					full_name:full_name,
+					full_name:fullName,
 					address:address,
 					email:email,
 					phone:phone,
@@ -129,10 +90,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 				.then(res => console.log("Successfully Edited",res))
 			},
-			updateContact: (full_name,address,email,phone) => {
+			updateContact: (fullName,address,email,phone) => {
 
 				let updatedContact = {
-					full_name:full_name,
+					full_name:fullName,
 					address:address,
 					email:email,
 					phone:phone,

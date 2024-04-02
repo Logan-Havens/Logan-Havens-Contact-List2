@@ -6,7 +6,7 @@ export const Context = React.createContext(null);
 
 // This function injects the global store to any view/component where you want to use it, we will inject the context to layout.js, you can see it here:
 // https://github.com/4GeeksAcademy/react-hello-webapp/blob/master/src/js/layout.js#L35
-export const injectContext = PassedComponent => {
+ const injectContext = PassedComponent => {
     const StoreWrapper = props => {
         //this will be passed as the contenxt value
         const [state, setState] = useState(
@@ -31,7 +31,7 @@ export const injectContext = PassedComponent => {
              * state.actions.loadSomeData(); <---- calling this function from the flux.js actions
              *
              **/
-            // state.actions.fetchAllContacts();
+            state.actions.fetchAllContacts();
         }, []);
 
         // The initial value for the context is not null anymore, but the current state of this component,

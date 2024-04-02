@@ -5,10 +5,10 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
-import addContacts from "./views/addContacts"
-import listContacts from "./views/listContacts";
+import AddContacts from "./views/addContacts"
+import ListContacts from "./views/listContacts";
 import injectContext from "./store/appContext";
-import editContacts from "./views/editContacts"
+import EditContacts from "./views/editContacts"
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -25,9 +25,9 @@ const Layout = () => {
                 <ScrollToTop>
                     <Navbar />
                     <Routes>
-                        <Route path="/listContacts" element={<listContacts />} />
-                        <Route path="/addContacts" element={<addContacts />} />
-                        <Route path="/editContacts" element={<editContacts />} />
+                        <Route path="/listContacts" element={<ListContacts />} />
+                        <Route path="/addContacts" element={<AddContacts />} />
+                        <Route path="/editContacts" element={<EditContacts />} />
                         <Route path="/" element={<Home />} />
                         <Route path="/demo" element={<Demo />} />
                         <Route path="/single/:theid" element={<Single />} />
