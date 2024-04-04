@@ -25,12 +25,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			fetchDeleteContacts: (id) => {
 				let options = {
 					method:"DELETE",
-					body:JSON.stringify(id),
+					
 					headers:{
 						"Content-Type":"application/json"
 					}
 				}
-				fetch("https://playground.4geeks.com/contact/agendas/logan/contacts"+id,options)
+				fetch("https://playground.4geeks.com/contact/agendas/logan/contacts/"+id,options)
 				.then(res => {
 					if (!res.ok)throw Error(res.statusText)
 					return res
@@ -67,7 +67,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			saveContact:(fullName,address,email,phone) => {
 
 				let newContact = {
-					full_name:fullName,
+					fullName:fullName,
 					address:address,
 					email:email,
 					phone:phone,
@@ -93,7 +93,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			updateContact: (fullName,address,email,phone) => {
 
 				let updatedContact = {
-					full_name:fullName,
+					fullName:fullName,
 					address:address,
 					email:email,
 					phone:phone,
